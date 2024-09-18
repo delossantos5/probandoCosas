@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="menuPrincipal.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <button class="dropdown-btn">Administración de Plan de Cuentas</button>
+    <div class="dropdown-container">
+        <a href="#">Opción 1</a>
+        <a href="#">Opción 2</a>
+    </div>
+    <button class="dropdown-btn">Registro de Asientos Contables</button>
+    <div class="dropdown-container">
+        <a href="#">Opción 1</a>
+        <a href="#">Opción 2</a>
+    </div>
+    <button class="dropdown-btn">Reporte de Libro Diario</button>
+    <div class="dropdown-container">
+        <a href="#">Opción 1</a>
+        <a href="#">Opción 2</a>
+    </div>
+    <button class="dropdown-btn">Reporte de Libro Mayor</button>
+    <div class="dropdown-container">
+        <a href="#">Opción 1</a>
+        <a href="#">Opción 2</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Bienvenido al Sistema Contable</h1>
+    <p>Selecciona una opción del menú para comenzar.</p>
+</div>
+
+<script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
